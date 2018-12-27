@@ -285,6 +285,7 @@ func compile(image string, config *ConfigFlags, flags *BuildFlags, folder string
 		"run", "--rm",
 		"-v", folder + ":/build",
 		"-v", depsCache + ":/deps-cache:ro",
+		"-e", "GO111MODULE=on",
 		"-e", "REPO_REMOTE=" + config.Remote,
 		"-e", "REPO_BRANCH=" + config.Branch,
 		"-e", "PACK=" + config.Package,
